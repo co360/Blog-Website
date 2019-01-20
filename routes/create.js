@@ -14,13 +14,13 @@ var connection = mysql.createConnection({
 connection.connect()
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/create', function(req, res, next) {
   // Retreive current blog posts listings
   connection.query('SELECT * FROM blog_posts', function (err, rows, fields){
     if (err) throw err;
   
     console.log("request " + rows[1].Content)
-    res.render('index', { title: 'Pug', posts: rows });
+    res.render('create', { title: 'Pug', posts: rows });
   })
 });
 
