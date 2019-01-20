@@ -1,0 +1,1 @@
+INSERT INTO blog_posts(Title, Content) VALUES ('First Blog Post', 'This is a test post which means the MySQL database has connected properly.');
