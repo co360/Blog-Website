@@ -1,13 +1,35 @@
 extends ../node_modules/pug-bootstrap/_bootstrap
 
 block body
+  script(src="http://code.jquery.com/jquery-3.3.1.min.js")
+  script.
+            //- button is equal to the ID of the blog post
+            var deletePost = function(button) {
+              console.log(button)
+              $.ajax({
+                url: `/?postid=${button}`,
+                type: 'delete',
+                success: function (result) {
+                  console.log(result);
+                  if(result === "OK"){
+                   location.reload();
+                  }
+              }
+            })}
   +navbar("MySQL Blog","dropdown_menu")
     +nav_item("/","active") Home
     +nav_item("/create") Create Blog Post
 
-  section
-   each item in posts
-    .blog-post
-      h2= item.Title
-      p= item.Content
+  .container
+    section
+    //- noPosts is determined in index.js
+    if noPosts
+      h4.text-center There are currently no posts. Click #[a(href="/create") here] to create one!
+    each item in posts
+      .blog-post
+        h2= item.Title
+        p= item.Content
+        button.btn.btn-danger(data-post-id=`${item.ID}`, onclick="deletePost(this.getAttribute('data-post-id'))") Delete
+
         
+                  

@@ -1,8 +1,10 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -18,6 +20,9 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -40,31 +45,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-var mysql = require('mysql')
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-//   password : 's3kreee7',
-  database : 'test'
-});
-
-connection.connect()
-
-connection.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
-  if (err) throw err
-
-  if (rows[0].solution === 2) {
-    console.log("MySQL Server running")
-  }
-})
-
-connection.query('SELECT * FROM blog_posts', function (err, rows, fields){
-  if (err) throw err;
-
-  console.log(rows[1].Content)
-})
-
-connection.end()
 
 module.exports = app;

@@ -9,6 +9,11 @@ a {
 
 .blog-post {
   border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
   padding: 10px;
   margin: 20px 10px;
+}
+
+.container {
+  max-width: 800px;
 }

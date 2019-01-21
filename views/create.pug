@@ -2,12 +2,17 @@ extends ../node_modules/pug-bootstrap/_bootstrap
 
 block body
   +navbar("MySQL Blog","dropdown_menu")
-    +nav_item("/","active") Home
-    +nav_item("/create") Create Blog Post
+    +nav_item("/") Home
+    +nav_item("/create", "active") Create Blog Post
 
   section
-   each item in posts
-    .blog-post
-      h2= item.Title
-      p= item.Content
-        
+    .container
+      h2 Create Blog Post
+      form(method='POST' action='/create')
+        div.form-group
+          label(for='title') Post Title:
+          input#name.form-control(type='text', placeholder='Hello world!' name='title' required)
+        div.form-group
+          label(for='content') Post Content:
+          textarea#content.form-control(placeholder='This is my blog post.' rows='10'  name='content' required)
+        button.btn.btn-primary(type='submit') Create Post
