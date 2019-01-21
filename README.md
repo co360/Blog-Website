@@ -26,6 +26,6 @@
     DB=test
   ```
     Fill these values with the corresponding ones for your MySQL Server.
- * Be sure to run the seed.sql and schema.sql files at the root of the directory.
-  * Run ```npm start```.
+* Be sure to run the seed.sql and schema.sql files at the root of the directory.
+* Run ```npm start```.
 
