@@ -18,7 +18,7 @@
   * Clone this GitHub repository into a directory of your choice.
   ```git clone https://github.com/avhaymart/Software-Company-Website.git```
   * At the root of the directory, run```npm install```.
-  * At the root of this directory, create a file named ```.env``` . Copy and paste this into the file:
+  * Create a file named ```.env``` at the root of the directory. Copy and paste this into the file:
   ```
     DB_HOST=localhost
     DB_USER=root
