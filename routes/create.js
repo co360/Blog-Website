@@ -13,8 +13,6 @@ var db_config = {
 var mysql = require('mysql')
 var connection = mysql.createConnection(db_config);
 
-connection.connect()
-
 function handleDisconnect() {
   connection = mysql.createConnection(db_config); // Recreate the connection, since
                                                   // the old one cannot be reused.
@@ -35,6 +33,8 @@ function handleDisconnect() {
     }
   });
 }
+
+handleDisconnect()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
