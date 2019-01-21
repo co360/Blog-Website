@@ -1,6 +1,6 @@
 # Blog-Website
 
-![Software Company Website Template](https://image.ibb.co/iNmWDA/website-software-company.jpg)
+![MySQL Blog Website](https://i.ibb.co/nc4XSbJ/mysql.png)
 
 * Team Members
    * Avonlea Haymart
