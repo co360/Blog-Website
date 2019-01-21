@@ -6,12 +6,15 @@ var router = express.Router();
 var mysql = require('mysql')
 
 // Fill this in with your MySQL connection info
-var connection = mysql.createConnection({
+var db_config = {
   host     : process.env.DB_HOST,
   user     : process.env.DB_USER,
   password : process.env.DB_PASSWORD,
   database : process.env.DB
-});
+}
+
+var mysql = require('mysql')
+var connection = mysql.createConnection(db_config);
 
 connection.connect();
 

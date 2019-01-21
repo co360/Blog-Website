@@ -3,14 +3,15 @@ var bodyParser = require('body-parser')
 var router = express.Router();
 
 // Create connection to MySQL Database
-
-var mysql = require('mysql')
-var connection = mysql.createConnection({
+var db_config = {
   host     : process.env.DB_HOST,
   user     : process.env.DB_USER,
   password : process.env.DB_PASSWORD,
   database : process.env.DB
-});
+}
+
+var mysql = require('mysql')
+var connection = mysql.createConnection(db_config);
 
 connection.connect()
 

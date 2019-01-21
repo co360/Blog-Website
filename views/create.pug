@@ -25,8 +25,8 @@ block body
       form(method='POST' action='/create')
         div.form-group
           label(for='title') Post Title:
-          input#name.form-control(type='text', placeholder='Hello world!' name='title' required pattern="[A-Za-z0-9 ]")
+          input#name.form-control(type='text', placeholder='Hello world!' name='title' required pattern="[A-Za-z0-9!,.; ]+")
         div.form-group
           label(for='content') Post Content:
-          textarea#content.form-control(placeholder='This is my blog post.' rows='10'  name='content' required pattern="[A-Za-z0-9 ]")
+          textarea#content.form-control(placeholder='This is my blog post.' rows='10'  name='content' required pattern="[A-Za-z0-9!,.; ]+")
         button.btn.btn-primary(type='submit') Create Post
