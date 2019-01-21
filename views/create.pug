@@ -1,5 +1,19 @@
 extends ../node_modules/pug-bootstrap/_bootstrap
 
+
+block head
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport",content="width=device-width, initial-scale=1")
+  meta(name="description",content="")
+  meta(name="author",content="")
+  link(rel="icon",href="../../favicon.ico")
+  title= title
+  block styles
+    link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
+
+
 block body
   +navbar("MySQL Blog","dropdown_menu")
     +nav_item("/") Home
